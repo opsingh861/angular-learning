@@ -1,25 +1,51 @@
-<h1>Product Details</h1>
-<div class="container">
-    <div>
-        <!-- <h3>Product Name: {{product.name}}</h3>
-        <h3>Product Price: {{product.price}}</h3> -->
-
-        <!-- <span>
-            <img style="height: 500px; width: 500px; display: flex;"
-                src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6331/6331918cv11d.jpg" alt="">
-
-        </span> -->
-        <img [src]="product.image" alt="" height="500px" width="300px">
+<h1>SmartPhone</h1>
+<div class="mainbox">
+    <div class="box">
+        <img src="{{product.image}}" alt="galaxy_phone" class="imag">
+        <h2>Product Details</h2>
         <h3>Product Name: {{product.name}}</h3>
-        <h3>Product Price: {{product.price}}</h3>
-        <h3>Total Price: {{calculatePrice()}}</h3>
-        <button [disabled]="product.inStock<=0">Buy Now</button> <br>
-        <button (click)="decrement()">-</button>
-        {{quantity}}
-        <button (click)="increment()">+</button>
-        <input type="text" value={{product.name}} (mouseover)="changeName()">
-
-        
-
-
+        <h3>Prics : {{product.price}}</h3>
+        <h3>Gst : {{product.gst}}</h3>
+        <h3>Total : {{product.price+product.gst}}</h3>
+        <h3>Product in Stock : {{product.inStock>0?"In Stock": "Out Stock"}}</h3>
+        <button
+            [ngStyle]="{'background-color':product.inStock>0?'yellow':'red','color':product.inStock>0?'blue':'white'}">Buy
+            Now</button>
     </div>
+    <div class="box">
+        <img src="https://m.media-amazon.com/images/I/71qGismu6NL._SX679_.jpg" alt="galaxy_phone" class="imag">
+        <h2>Product Details</h2>
+        <h3>Product Name: {{product.name}}</h3>
+        <h3>Prics : {{product.price}}</h3>
+        <h3>Gst : {{product.gst}}</h3>
+        <h3>Total : {{calculate()}}</h3>
+        <h3>Product in Stock : {{product.inStock>0?"In Stock": "Out Stock"}}</h3>
+        <button [ngStyle]="{'background-color':'black','color':'white'}">Buy later</button>
+    </div>
+    <div class="box">
+        <img [src]="product.image" alt="galaxy_phone" class="imag">
+        <h2>Product Details</h2>
+        <h3>Product Name: {{product.name}}</h3>
+        <h3>Prics : {{product.price}}</h3>
+        <h3>Gst : {{product.gst}}</h3>
+        <h3>Total : {{calculate()}}</h3>
+        <h3>Product in Stock : {{product.inStock>0?"In Stock": "Out Stock"}}</h3>
+        <button [ngStyle]=" applyStyles()">Buy Now</button>
+    </div>
+    <div class="box">
+        <img [src]="product.image2" alt="galaxy_phone" class="imag">
+        <h2>Product Details</h2>
+        <h3>Product Name: {{product.name}}</h3>
+        <h3>Prics : {{product.price}}</h3>
+        <h3>Gst : {{product.gst}}</h3>
+        <h3>Total : {{calculate()}}</h3>
+        <h3>Product in Stock : {{product.inStock>0?"In Stock": "Out Stock"}}</h3>
+    </div>
+
+</div>
+
+<!--  -->
+
+<li *ngFor="let review of reviewList">
+    {{review.name}} {{review.rating}} {{review.feedback}}
+</li>

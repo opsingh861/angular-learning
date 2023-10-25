@@ -1,24 +1,28 @@
-body {
-    /* background image from local storage*/
-    background-image: url('./istockphoto-455179327-170667a.jpg');
-}
-
-h1 {
-    color: red;
-    font-style: bold;
-    font-size: 50px;
-    text-align: center;
-}
-
-h3 {
-    color: blue;
-    font-style: bold;
-    font-size: 30px;
-    text-align: center;
-}
-
-.container {
+.mainbox{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    
+}
+.imag{
+    width: 200px;
+    display: flex;
+    transition: .5s ease-in;
+}
+
+.imag:hover{
+    transform: scale(1.1);
+    width: 200px;
+    display: flex;
+}
+
+h3{
+    color:blue;
+    font-size: 15px;
+}
+h1{
+    color: red;
+    font-size: 22px;
+    text-align: center;
+}
+h2{
+    color: red;
 }
